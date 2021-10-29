@@ -1,13 +1,21 @@
 #ifndef __BOARD_H
 #define __BOARD_H
 
-#include <unordered_map>
+#include <unorded_map>
 #include <iostream>
 
 using namespace std;
 
 class Board {
     public:
+        enum boardCoords { a1 = 0, b1 = 1, c1 = 2, d1 = 3, e1 = 4, f1 = 5, g1 = 6, h1 = 7, 
+                           a2 = 8, b2 = 9, c2 = 10, d2 = 11, e2 = 12, f2 = 13, g2 = 14, h2 = 15, 
+                           a3 = 16, b3 = 17, c3 = 18, d3 = 19, e3 = 20, f3 = 21, g3 = 22, h3 = 23, 
+                           a4 = 16, b4 = 17, c4 = 18, d4 = 19, e4 = 20, f4 = 21, g4 = 22, h4 = 23,
+                           a5 = 24, b5 = 25, c5 = 26, d5 = 27, e5 = 28, f5 = 29, g5 = 30, h5 = 31,
+                           a6 = 32, b6 = 33, c6 = 34, d6 = 35, e6 = 36, f6 = 37, g6 = 38, h6 = 38,
+                           a7 = 39, b7 = 40, c7 = 41, d7 = 42, e7 = 43, f7 = 43, g7 = 44, h7 = 45,
+                           a8 = 46, b8 = 47, c8 = 48, d8 = 49, e8 = 49, f8 = 50, g8 = 51, h8 = 52};
         void setPos( string, int );
         void printBoard( );
 
