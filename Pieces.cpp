@@ -1,6 +1,6 @@
 #include "Pieces.h"
 
-void Pieces::PopulateBoard()
+void Pieces::PopulateBoard(Board newBoard)
 {
     for( int i = 0; i < 8; i++ )
     {
@@ -19,28 +19,28 @@ void Pieces::PopulateBoard()
                             switch (j)
                             {
                                 case 0:
-                                    currentBoard.setPos( "a1", ROOK);
+                                    newBoard.setPos( "a1", ROOK);
                                     break; 
                                 case 1:
-                                    currentBoard.setPos( "b1", KNIGHT);
+                                    newBoard.setPos( "b1", KNIGHT);
                                     break; 
                                 case 2:
-                                    currentBoard.setPos( "c1", BISHOP);
+                                    newBoard.setPos( "c1", BISHOP);
                                     break; 
                                 case 3:
-                                    currentBoard.setPos( "d1", QUEEN);
+                                    newBoard.setPos( "d1", QUEEN);
                                     break;   
                                 case 4:
-                                    currentBoard.setPos( "e1", KING);
+                                    newBoard.setPos( "e1", KING);
                                     break;
                                 case 5:
-                                    currentBoard.setPos( "f1", BISHOP);
+                                    newBoard.setPos( "f1", BISHOP);
                                     break;
                                 case 6:
-                                    currentBoard.setPos( "g1", KNIGHT);
+                                    newBoard.setPos( "g1", KNIGHT);
                                     break;
                                 case 7:
-                                    currentBoard.setPos( "h1", ROOK);
+                                    newBoard.setPos( "h1", ROOK);
                                     break;
                             }
 
@@ -49,28 +49,28 @@ void Pieces::PopulateBoard()
                             switch (j)
                             {
                                 case 0:
-                                    currentBoard.setPos( "a8", ROOK);
+                                    newBoard.setPos( "a8", ROOK);
                                     break; 
                                 case 1:
-                                    currentBoard.setPos( "b8", KNIGHT);
+                                    newBoard.setPos( "b8", KNIGHT);
                                     break; 
                                 case 2:
-                                    currentBoard.setPos( "c8", BISHOP);
+                                    newBoard.setPos( "c8", BISHOP);
                                     break; 
                                 case 3:
-                                    currentBoard.setPos( "d8", QUEEN);
+                                    newBoard.setPos( "d8", QUEEN);
                                     break;   
                                 case 4:
-                                    currentBoard.setPos( "e8", KING);
+                                    newBoard.setPos( "e8", KING);
                                     break;
                                 case 5:
-                                    currentBoard.setPos( "f8", BISHOP);
+                                    newBoard.setPos( "f8", BISHOP);
                                     break;
                                 case 6:
-                                    currentBoard.setPos( "g8", KNIGHT);
+                                    newBoard.setPos( "g8", KNIGHT);
                                     break;
                                 case 7:
-                                    currentBoard.setPos( "h8", ROOK);
+                                    newBoard.setPos( "h8", ROOK);
                                     break;
                             }               
 
@@ -85,28 +85,28 @@ void Pieces::PopulateBoard()
                             switch (j)
                             {
                                 case 0:
-                                    currentBoard.setPos( "a2", PAWN);
+                                    newBoard.setPos( "a2", PAWN);
                                     break; 
                                 case 1:
-                                    currentBoard.setPos( "b2", PAWN);
+                                    newBoard.setPos( "b2", PAWN);
                                     break; 
                                 case 2:
-                                    currentBoard.setPos( "c2", PAWN);
+                                    newBoard.setPos( "c2", PAWN);
                                     break; 
                                 case 3:
-                                    currentBoard.setPos( "d2", PAWN);
+                                    newBoard.setPos( "d2", PAWN);
                                     break;   
                                 case 4:
-                                    currentBoard.setPos( "e2", PAWN);
+                                    newBoard.setPos( "e2", PAWN);
                                     break;
                                 case 5:
-                                    currentBoard.setPos( "f2", PAWN);
+                                    newBoard.setPos( "f2", PAWN);
                                     break;
                                 case 6:
-                                    currentBoard.setPos( "g2", PAWN);
+                                    newBoard.setPos( "g2", PAWN);
                                     break;
                                 case 7:
-                                    currentBoard.setPos( "h2", PAWN);
+                                    newBoard.setPos( "h2", PAWN);
                                     break;
                             }
 
@@ -115,28 +115,28 @@ void Pieces::PopulateBoard()
                             switch (j)
                             {
                                 case 0:
-                                    currentBoard.setPos( "a7", PAWN);
+                                    newBoard.setPos( "a7", PAWN);
                                     break; 
                                 case 1:
-                                    currentBoard.setPos( "b7", PAWN);
+                                    newBoard.setPos( "b7", PAWN);
                                     break; 
                                 case 2:
-                                    currentBoard.setPos( "c7", PAWN);
+                                    newBoard.setPos( "c7", PAWN);
                                     break; 
                                 case 3:
-                                    currentBoard.setPos( "d7", PAWN);
+                                    newBoard.setPos( "d7", PAWN);
                                     break;   
                                 case 4:
-                                    currentBoard.setPos( "e7", PAWN);
+                                    newBoard.setPos( "e7", PAWN);
                                     break;
                                 case 5:
-                                    currentBoard.setPos( "f7", PAWN);
+                                    newBoard.setPos( "f7", PAWN);
                                     break;
                                 case 6:
-                                    currentBoard.setPos( "g7", PAWN);
+                                    newBoard.setPos( "g7", PAWN);
                                     break;
                                 case 7:
-                                    currentBoard.setPos( "h7", PAWN);
+                                    newBoard.setPos( "h7", PAWN);
                                     break;
                             }               
 
@@ -149,17 +149,17 @@ void Pieces::PopulateBoard()
     }
 }
 
-void Pieces::MovePiece()
+void Pieces::MovePiece(Board curBoard)
 {
 
 }
 
-void Pieces::Promote()
+void Pieces::Promote(Board curBoard)
 {
 
 }
 
-void Pieces::AvailableMoves(int currentPos, int Piece)
+void Pieces::AvailableMoves(Board curBoard, int currentPos, int Piece)
 {
     switch()
 }
