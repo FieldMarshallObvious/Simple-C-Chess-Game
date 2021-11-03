@@ -2,14 +2,14 @@
 #define __PIECES_H
 #include "Board.h"
 
-enum PIECES { KING = 1, QUEEN = 2, BISHOP = 3, KNIGHT = 4, ROOK = 5, PAWN = 6 };
+enum PIECES { KING = 0, QUEEN = 1, BISHOP = 2, KNIGHT = 3, ROOK = 4, PAWN = 5, PIECES = 6 };
 
 class Pieces {
     public:
-        void PopulateBoard();
-        void MovePiece();
-        void Promote();
-        void AvailableMoves(int currentPos, int piece);
+        void PopulateBoard(Board newBoard);
+        void MovePiece(Board curBoard);
+        void Promote(Board curBoard);
+        void AvailableMoves(Board curBoard, int currentPos, int piece);
 
 
     private:
@@ -24,9 +24,6 @@ class Pieces {
           bool isStartingPos = true;
         };
         bool detectMovementObstacle();
-        Board currentBoard;
-
-
 
 };
 
