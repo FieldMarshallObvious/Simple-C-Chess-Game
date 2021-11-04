@@ -1,11 +1,21 @@
 #include "Board.h"
-#include "Pieces.h"
 #include "Player.h"
 
 using namespace std;
 
+// Global objects
+Board gameBoard;
+Player white;
+Player black;
+
 // Run program
 int main( )
+{
+
+}
+
+// Initialize game to starting state
+void initializeGame( )
 {
 
 }
