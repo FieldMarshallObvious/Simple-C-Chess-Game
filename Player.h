@@ -9,21 +9,30 @@ using namespace std;
 class Player
 {
     private:
+        static const int STARTING_PIECES = 16;
         int timeRemaining;
         int curTurn;
-        Pieces curPieces[PIECES]; // array to contain the total amount of pieces a player has 
+        Pieces curPieces[STARTING_PIECES]; // array to contain the total amount of pieces a player has 
         int takenMaterial[PIECES]; // array to contain the total amount of material taken
         
 
     public:
-        // Setter functions
+        // Initializer
+        Player(int offset, Board curBoard);
+
+        // Setter function
+        void setTimeRemaining(int increment) { timeRemaining+=increment; }
+        void setcurTurn(int increment) { curTurn+=increment; }
+        void losePiece(Pieces lostPiece);
+        void takePiece(Pieces taken);
+        void movePiece( Pieces piece, int pos );
+
 
         // Getter functions 
         int getTimeRemaining() { return timeRemaining; }
         int getcurTurn() {return curTurn; }
-        Pieces getPiece ( int index ) { return curPieces(index); }
-        int getTakenMaterial ( int piece ) { return takenMaterial(piece); }
-
+        int getTakenMaterial ( int piece ) { return takenMaterial[piece]; }
+        Pieces getPiece ( int piece ){ return curPieces[piece]; };
 };
 
 #endif

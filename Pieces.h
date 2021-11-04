@@ -2,19 +2,17 @@
 #define __PIECES_H
 #include "Board.h"
 
-enum PIECES { KING = 0, QUEEN = 1, BISHOP = 2, KNIGHT = 3, ROOK = 4, PAWN = 5, PIECES = 6 };
-
 class Pieces {
     public:
-        void PopulateBoard(Board newBoard);
-        void MovePiece(Board curBoard);
+        void MovePiece(int newPos, Board curBoard);
         void Promote(Board curBoard);
         void AvailableMoves(Board curBoard, int currentPos, int piece);
+        void changeType(int newType){ piece->pieceType = newType; }
 
 
     private:
         // All general piece attributes
-        struct PieceType
+        struct PieceAttributes
         {
           int pieceType = -1;
           bool pinned = false;
@@ -22,7 +20,10 @@ class Pieces {
           bool isChecking = false;
           bool EnPassant = false;
           bool isStartingPos = true;
+          int location = -1;
+
         };
+        PieceAttributes *piece; 
         bool detectMovementObstacle();
 
 };
