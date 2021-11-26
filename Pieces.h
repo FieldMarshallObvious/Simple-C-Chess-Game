@@ -8,6 +8,9 @@ class Pieces {
         void Promote(Board curBoard);
         void AvailableMoves(Board curBoard, int currentPos, int piece);
         void changeType(int newType){ piece->pieceType = newType; }
+        void changeLocation(int newLocation){ piece->location = newLocation; }
+        int getPieceType( ){ return piece->pieceType; }
+        int getLocation( ){ return piece->location; }
 
 
     private:
