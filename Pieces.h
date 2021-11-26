@@ -5,7 +5,7 @@
 class Pieces {
     public:
         void MovePiece(int newPos, Board curBoard);
-        void Promote(Board curBoard);
+        void Promote(Board curBoard, int PieceType);
         void AvailableMoves(Board curBoard, int currentPos, int piece);
         void changeType(int newType){ piece->pieceType = newType; }
         void changeLocation(int newLocation){ piece->location = newLocation; }
