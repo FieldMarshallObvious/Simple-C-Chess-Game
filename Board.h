@@ -22,9 +22,11 @@ enum boardCoords { a1 = 0, b1 = 1, c1 = 2, d1 = 3, e1 = 4, f1 = 5, g1 = 6, h1 = 
 
 class Board {
     public:
-        void setPos( string, int );
+        // Initializer
+        Board( );
+
+        void setPos( int, int );
         void printBoard( );
-        void PopulateBoard( );
 
 
 

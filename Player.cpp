@@ -1,5 +1,19 @@
 #include "Player.h"
 
+// Initalizer
+Player::Player()
+{
+    // Creating new intial values
+    for( int i = 0; i < PIECES; i++ )
+    {
+        Pieces newPiece;
+        curPieces[i] = newPiece;
+    }
+
+    // Initialize piece taken array
+    for( int i = 0; i < STARTING_PIECES/2; i++ )
+        takenMaterial[i] = -1;
+}
 
 Player::Player(int offset, Board curBoard)
 {
@@ -12,7 +26,7 @@ Player::Player(int offset, Board curBoard)
         curLocation++;
 
         // Set white initial back row
-        if( i <= 7 )
+        if( i <= 7 || ( 39 <= i <= 46  ) )
         {
             switch (i)
             {
@@ -42,56 +56,7 @@ Player::Player(int offset, Board curBoard)
                 break; 
             }
         }
-
-        // Set white second row pieces to pawns
-        else if( 8 <= i <= 15 )
-        {
-            setPieceState( PAWN, i, curLocation+offset, newPieces, curBoard);
-        }
-
-        // Set black second row peices to pawns
-        else if(  39 <= i <= 46 )
-        {
-            setPieceState( PAWN, i, curLocation+offset, newPieces, curBoard);
-        }
-
-        // Set black back row initial
-        else if( 47 <= i )
-        {
-            switch (i)
-            {
-            case 47:
-                setPieceState( ROOK, i, curLocation+offset, newPieces, curBoard);
-                break;
-            case 48:
-                setPieceState( KNIGHT, i, curLocation+offset, newPieces, curBoard);
-                break;
-            case 49: 
-                setPieceState( BISHOP, i, curLocation+offset, newPieces, curBoard);
-                break;
-            case 50:
-                setPieceState( KING, i, curLocation+offset, newPieces, curBoard);
-                break;
-            case 51:
-                setPieceState( QUEEN, i, curLocation+offset, newPieces, curBoard);
-                break;
-            case 52:
-                setPieceState( BISHOP, i, curLocation+offset, newPieces, curBoard);
-                break;
-            case 53:
-                setPieceState( KNIGHT, i, curLocation+offset, newPieces, curBoard);
-                break;
-            case 54:
-                setPieceState( ROOK, i, curLocation+offset, newPieces, curBoard);
-                break; 
-            }
-        }
-    }
-
-    // Initialize cpiece taken
-    for( int i = 0; i < STARTING_PIECES/2; i++ )
-    {
-
+        curPieces[i] = newPieces;
     }
 }
 
@@ -138,9 +103,16 @@ void Player::takePiece(Pieces taken)
         }
     }
 }
-void Player::movePiece( Pieces piece, int pos )
+void Player::movePiece( Pieces piece, Board curBoard, int newPos )
 {
-
+    // Find the piece that the player is moving
+    // then change it's position 
+    for( int i = 0; i < STARTING_PIECES; i++ )
+    {
+        if( curPieces[i].getLocation() == piece.getLocation() )
+            curPieces[i].MovePiece( newPos, curBoard );
+        
+    }
 }
 
 void Player::setPieceState( int type, int index, int location, Pieces newPieces, Board curBoad )
