@@ -13,7 +13,8 @@ class Player
         int timeRemaining;
         int curTurn;
         Pieces curPieces[STARTING_PIECES]; // array to contain the total amount of pieces a player has 
-        int takenMaterial[PIECES]; // array to contain the total amount of material taken
+        int takenMaterial[STARTING_PIECES/2]; // array to contain the total amount of material taken
+        void setPieceState( int type, int index, int location, Pieces newPiece, Board curBoad);
         
 
     public:
